@@ -1,0 +1,55 @@
+### Add student 1: Only a few details
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+  "name": "Rahul",
+  "rollNumber": 101,
+  "class": 12
+}
+
+### Add student 2: Completely different details
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+  "name": "Priya",
+  "phone": "9876543210",
+  "address": "Noida",
+  "hobby": "Cricket",
+  "bloodGroup": "B+",
+  "scholarship": true,
+  "subjects": ["Maths", "Physics", "Chemistry"]
+}
+
+### Add student 3: Include nested details
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+  "name": "Aman",
+  "department": "Computer Science",
+  "guardian": {
+    "name": "Rajesh",
+    "phone": "9876501234"
+  }
+}
+
+### Get all students
+GET http://localhost:8080/students
+
+### Get student with ID 1
+GET http://localhost:8080/students/1
+
+### Add or change fields for student 1
+PATCH http://localhost:8080/students/1
+Content-Type: application/json
+
+{
+  "phone": "9999999999",
+  "address": "Greater Noida",
+  "bloodGroup": "O+"
+}
+
+### Delete student 1
+DELETE http://localhost:8080/students/1
